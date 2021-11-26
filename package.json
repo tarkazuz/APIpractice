@@ -1,0 +1,22 @@
+{
+  "name": "bootcamp",
+  "version": "1.0.0",
+  "description": "bootcamp exercise",
+  "main": "greeting.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soriasayer/greetng.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soriasayer/greetng/issues"
+  },
+  "homepage": "https://github.com/soriasayer/greetng#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
