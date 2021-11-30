@@ -13,7 +13,6 @@ const PostDetail = ({posts}) => {
     <div>
         <h2 className='mainTitle'>Post</h2>
         <button onClick={()=>navigate('/')} className='backButton'>Back</button>
-        {console.log(selectedPost(id))}
         {selectedPost(id).map((post)=>{
             return(
                 <div className='post'>
