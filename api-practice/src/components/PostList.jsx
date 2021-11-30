@@ -1,9 +1,16 @@
 import React from 'react'
+import PostDetail from './PostDetails'
 
 const PostList = ({posts}) => {
+
     return <li>
         {posts.map((post)=>{
-            return <ul>{post.title}</ul>
+            console.log({post})
+            return (
+            <div key = {post.id}>
+                <PostDetail postTitle={post.title} postBody={post.body}/>
+            </div>
+            )
         })}
     </li>
 }
