@@ -2,6 +2,8 @@ import React , {useState, useEffect} from 'react'
 import axios from 'axios'
 import './App.css';
 import PostList from './components/PostList';
+import PostDetail from './components/PostDetails';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -20,7 +22,12 @@ useEffect(()=>{
   return (
     <div className="App">
     <h1 className='mainTitle'>Posts</h1>
-      <PostList posts={posts}/>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<PostList posts={posts}/>}/>
+        <Route path='/posts/:id' element={<PostDetail posts={posts}/>}/>
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
