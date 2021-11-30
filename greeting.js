@@ -10,19 +10,27 @@ const greet = (name) => {
             return 'Hello, my friend'
         } else if (name === name.toUpperCase()){
             return `HELLO ${name}!`
-        } else return `${name} is invalid!`
+        } else return `${name} is invalid name!`
     }
 
     if(isArray) {
-        const arrLength = name.length
-        if(arrLength === 2){
-            return `Hello, ${name[0]} and ${name[1]}`
-        }else if(arrLength === 3){
-            return `Hello, ${name[0]}, ${name[1]} and ${name[2]}` 
-        } else return `${name} is invalid!`
-    }  
+        const splitedNames = name.slice(0, name.length).join(",").split(',')
+        const trimedNames = splitedNames.map(n => n.trim())
+        const namesLength = trimedNames.length
+        const namesBeforAnd = trimedNames.slice(0, namesLength-1).join(", ")
+        const nameAfterAnd = trimedNames[namesLength - 1]
+       if(namesLength > 1){
+           return `Hello, ${namesBeforAnd} and ${nameAfterAnd}!`
+       } else return `Hello, ${nameAfterAnd}!` 
+    } 
 }
 
-greet(['s', 'c', 'r'])
+console.log(greet(['Bob, Cecile', "Smith, Soria, Aria, Maria"]))
+console.log(greet(['Bob', 'Ashkaan']))
+console.log(greet(['Bob']))
+console.log(greet('Bob'))
+console.log(greet('BOB'))
+console.log(greet(null))
+console.log(greet('soria'))
 
 module.exports = greet
