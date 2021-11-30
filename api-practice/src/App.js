@@ -19,7 +19,7 @@ useEffect(()=>{
 
   return (
     <div className="App">
-      API practice
+    <h1 className='mainTitle'>Posts</h1>
       <PostList posts={posts}/>
     </div>
   );
